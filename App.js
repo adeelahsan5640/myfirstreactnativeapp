@@ -1,17 +1,19 @@
 import React from 'react'
 import { Text, StyleSheet, View } from 'react-native'
-import CustomComponent from './src/screens/CustomComponent'
-import FirstChallenge from './src/screens/FirstChallenge'
-import FlatListDemo from './src/screens/FlatListDemo'
-import ChallengeFlatList from './src/screens/ChallengeFlatList'
-import ImageComp from './src/screens/ImageComp'
-import ButtonComp from './src/screens/ButtonComp'
-import NetflixCard from './src/Components/NetflixCard'
+import Home from './src/screens/Home'
+import ContactUs from './src/screens/ContactUs'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 const App = () => {
+  const Stack = createNativeStackNavigator()
   return (
-    <View>
-      <NetflixCard />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator intitialRouteName='login'>
+        <Stack.Screen name='Login' component={ContactUs} />
+        <Stack.Screen name='Home' component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 
